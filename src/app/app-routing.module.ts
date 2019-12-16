@@ -1,15 +1,24 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { DriversComponent } from "./containers/drivers/drivers.component";
-import { ReportsComponent } from "./components/reports/reports.component";
-import { CarsComponent } from "./containers/cars/cars.component";
-import { AdsComponent } from "./containers/ads/ads.component";
+import { DriversComponent } from "./modules/drivers/container/drivers-container.component";
+
 const routes: Routes = [
-  { path: "", redirectTo: "drivers", pathMatch: "full" },
-  { path: "drivers", component: DriversComponent },
-  { path: "reports", component: ReportsComponent },
-  { path: "cars", component: CarsComponent },
-  { path: "ads", component: AdsComponent }
+  { path: "", component: DriversComponent },
+  {
+    path: "reports",
+    loadChildren: () =>
+      import("./modules/reports/report.module").then(m => m.ReportModule)
+  },
+  {
+    path: "cars",
+    loadChildren: () =>
+      import("./modules/cars/cars.module").then(m => m.CarsModule)
+  },
+  {
+    path: "ads",
+    loadChildren: () =>
+      import("./modules/ads/ads.module").then(m => m.AdsModule)
+  }
 ];
 
 @NgModule({
