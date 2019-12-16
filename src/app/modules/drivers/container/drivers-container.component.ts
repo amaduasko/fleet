@@ -5,7 +5,7 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./drivers-container.component.html",
   styleUrls: ["./drivers-container.component.scss"]
 })
-export class DriversComponent implements OnInit {
+export class DriversContainer implements OnInit {
   constructor() {}
 
   ngOnInit() {}

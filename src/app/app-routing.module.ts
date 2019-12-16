@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { DriversComponent } from "./modules/drivers/container/drivers-container.component";
+import { DriversContainer } from "./modules/drivers/container/drivers-container.component";
 
 const routes: Routes = [
-  { path: "", component: DriversComponent },
+  { path: "", component: DriversContainer },
   {
     path: "reports",
     loadChildren: () =>
